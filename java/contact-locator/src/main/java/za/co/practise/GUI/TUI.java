@@ -1,4 +1,4 @@
-package za.co.practise;
+package za.co.practise.GUI;
 
 public interface TUI {
      final String[] mainMenuOptions = {

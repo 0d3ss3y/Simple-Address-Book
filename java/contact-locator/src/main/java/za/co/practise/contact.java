@@ -2,8 +2,8 @@ package za.co.practise;
 
 import java.util.Scanner;
 
-import static za.co.practise.TUI.displayMenu;
-import static za.co.practise.TUI.mainMenuOptions;
+import static za.co.practise.GUI.TUI.displayMenu;
+import static za.co.practise.GUI.TUI.mainMenuOptions;
 
 public class contact {
     private static final Scanner scanner = new Scanner(System.in);
