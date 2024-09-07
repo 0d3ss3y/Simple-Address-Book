@@ -16,9 +16,24 @@ public class contact {
 
     private static Boolean validateOption(String option) {
         int optlistlength = mainMenuOptions.length;
+        int option_idx;
 
-        if (Integer.valueOf(option))
+        try {
+            option_idx = Integer.parseInt(option);
 
+            if (option_idx<optlistlength || option_idx>optlistlength){
+                throw new NumberFormatException();
+            } else if (option_idx == 4) {
+                System.exit(1);
+            } else {
+
+            }
+
+        }catch (NumberFormatException e){
+            System.out.println("~Enter the item index~");
+        }
+
+        return null;
     }
 
 

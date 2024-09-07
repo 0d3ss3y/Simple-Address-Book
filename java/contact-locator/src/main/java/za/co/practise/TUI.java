@@ -4,7 +4,8 @@ public interface TUI {
      final String[] mainMenuOptions = {
             "Save Contact",
             "Delete Contact",
-            "Search"
+            "Search",
+             "Exit"
     };
 
     static void displayMenu(){
@@ -17,6 +18,6 @@ public interface TUI {
             System.out.println(mainMenuOptions[i]);
         }
 
-        System.out.println("Please choose an option from the above: ");
+        System.out.print("\nPlease choose an option from the above: ");
     }
 }
