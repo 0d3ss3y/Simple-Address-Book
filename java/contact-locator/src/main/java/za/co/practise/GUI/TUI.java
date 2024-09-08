@@ -18,5 +18,6 @@ public interface TUI {
             System.out.println(mainMenuOptions[i]);
         }
 
-        System.out.print("Enter an option (1-3) or 4 to exit: ");    }
+        System.out.print("\nPlease choose an option from the above: ");
+    }
 }
