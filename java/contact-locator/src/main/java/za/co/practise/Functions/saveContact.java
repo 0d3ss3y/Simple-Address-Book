@@ -10,7 +10,7 @@ public class saveContact {
         String contactName = getContactName();
         String contactNumber = getContactNumber();
 
-        System.out.println("\n"+contactName + " " + contactNumber);
+        //System.out.println("\n"+contactName + " " + contactNumber);
 
         if (contactName != null){
             contact.contactDetails.put(contactName,contactNumber);

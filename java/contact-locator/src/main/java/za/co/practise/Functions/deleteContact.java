@@ -1,31 +1,30 @@
 package za.co.practise.Functions;
 
-import java.util.Map;
 import java.util.Scanner;
 import za.co.practise.contact;
 
 public class deleteContact {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public deleteContact(){
-        String[] details = getContactName();
+        getContact();
     }
 
-    private String[] getContactName() {
+    private void getContact() {
         System.out.print("Enter contact name: ");
         String name = sc.nextLine();
 
         if (name.isEmpty() || name.equalsIgnoreCase("null")){
-            return null;
+            System.out.println("Contact name is empty");
+        } else if (contact.contactDetails.isEmpty()) {
+            System.out.println("Contact list is empty");
         } else {
             if (contact.contactDetails.containsKey(name)){
-                String contactNumber = contact.contactDetails.get(name);
-                return new String[]{name,contactNumber};
+                contact.contactDetails.remove(name);
+                System.out.println("Contact has been successfully removed");
             } else {
                 System.out.println("Contact "+name+" not found");
             }
         }
-
-        return null;
     }
 }
