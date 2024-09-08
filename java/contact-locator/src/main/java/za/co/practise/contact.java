@@ -1,6 +1,7 @@
 package za.co.practise;
 
-import java.util.ArrayList;
+import za.co.practise.Functions.saveContact;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import static za.co.practise.GUI.TUI.*;
 
 public class contact {
     private static final Scanner scanner = new Scanner(System.in);
-    public Map<String, Integer> contactDetails = new HashMap<>();
+    public static Map<String, String> contactDetails = new HashMap<>();
 
     public static void main(String[] args) {
         System.out.println("Contact List");
@@ -25,13 +26,13 @@ public class contact {
         try {
             option_idx = Integer.parseInt(option);
 
-            if (option_idx<optlistlength || option_idx>optlistlength){
+            if (option_idx<=0 || option_idx>optlistlength){
                 throw new NumberFormatException();
             } else if (option_idx == 4) {
                 System.exit(1);
             } else {
                 switch (option_idx){
-                    case 1 -> {}
+                    case 1 -> new saveContact();
                     case 2 -> {}
                     case 3 -> {}
                 }
