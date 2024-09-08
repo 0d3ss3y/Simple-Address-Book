@@ -2,6 +2,7 @@ package za.co.practise;
 
 import za.co.practise.Functions.deleteContact;
 import za.co.practise.Functions.saveContact;
+import za.co.practise.Functions.searchContact;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class contact {
                     switch (option_idx) {
                         case 1 -> new saveContact();
                         case 2 -> new deleteContact();
-                        case 3 -> System.out.println("Option 3 selected - Search Contact");
+                        case 3 -> new searchContact();
                         case 4 -> System.out.println("Option 4 selected - View Contact");
                         case 5 -> {
                             System.out.println("Exiting...");

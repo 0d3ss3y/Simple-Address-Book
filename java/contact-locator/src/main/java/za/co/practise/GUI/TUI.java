@@ -9,6 +9,11 @@ public interface TUI {
              "Exit"
     };
 
+     final String[] searchMenuOptions = {
+             "Search By Name",
+             "Search By Number",
+     };
+
     static void displayMenu(){
         System.out.println("\nMain Menu:");
 
@@ -20,5 +25,17 @@ public interface TUI {
         }
 
         System.out.print("\nPlease choose an option from the above: ");
+    }
+
+    static void searchMenu(){
+        System.out.println();
+        for (int i = 0; i < searchMenuOptions.length; i++) {
+            System.out.print("[");
+            System.out.print(Integer.toString(i+1));
+            System.out.print("] ");
+            System.out.println(searchMenuOptions[i]);
+        }
+        System.out.print("\nPlease choose an option from the above: ");
+
     }
 }

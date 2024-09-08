@@ -12,10 +12,12 @@ public class saveContact {
 
         //System.out.println("\n"+contactName + " " + contactNumber);
 
-        if (contactName != null){
+        if (contactName != null && !contact.contactDetails.containsKey(contactName)) {
             contact.contactDetails.put(contactName,contactNumber);
             System.out.println("Successfully Saved");
-        }else{
+        } else if (contact.contactDetails.containsKey(contactName) || contact.contactDetails.containsValue(contactNumber)) {
+            System.out.println("Contact already exists");
+        } else{
             System.out.println("Error Saving contact.");
         }
     }
