@@ -10,6 +10,8 @@ public class saveContact {
         String contactName = getContactName();
         String contactNumber = getContactNumber();
 
+        System.out.println("\n"+contactName + " " + contactNumber);
+
         if (contactName != null){
             contact.contactDetails.put(contactName,contactNumber);
             System.out.println("Successfully Saved");
@@ -19,11 +21,11 @@ public class saveContact {
     }
 
     private String getContactNumber() {
-        System.out.print("\nEnter your country code: +");
+        System.out.print("Enter your country code: +");
         String country_code = "+["+scanner.nextLine()+"]";
-        System.out.print("\nEnter your phone number: ");
-        String unique_number= "";
-        return country_code+unique_number;
+        System.out.print("Enter your phone number: ");
+        String unique_number= scanner.nextLine();
+        return country_code+" "+unique_number;
     }
 
     private String getContactName() {
@@ -32,7 +34,7 @@ public class saveContact {
             String name = scanner.nextLine();
             Boolean nameCheck = validateName(name);
 
-            if (nameCheck){
+            if (!nameCheck){
                 return name;
             }
         } catch (Exception e){

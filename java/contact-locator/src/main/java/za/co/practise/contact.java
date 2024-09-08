@@ -27,7 +27,7 @@ public class contact {
             option_idx = Integer.parseInt(option);
 
             if (option_idx<=0 || option_idx>optlistlength){
-                throw new NumberFormatException();
+                System.out.println("Option doesn't exist");
             } else if (option_idx == 4) {
                 System.exit(1);
             } else {
