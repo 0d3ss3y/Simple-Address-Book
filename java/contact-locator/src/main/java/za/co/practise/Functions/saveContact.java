@@ -30,7 +30,7 @@ public class saveContact {
 
     private String getContactName() {
         try {
-            System.out.print("Enter Contact Name: ");
+            System.out.print("\nEnter Contact Name: ");
             String name = scanner.nextLine();
             Boolean nameCheck = validateName(name);
 

@@ -1,5 +1,6 @@
 package za.co.practise;
 
+import za.co.practise.Functions.deleteContact;
 import za.co.practise.Functions.saveContact;
 
 import java.util.HashMap;
@@ -14,35 +15,39 @@ public class contact {
 
     public static void main(String[] args) {
         System.out.println("Contact List");
-        displayMenu();
-        String option = scanner.nextLine();
-        Boolean optCheck = validateOption(option);
+        validateOption();
     }
 
-    private static Boolean validateOption(String option) {
+    private static void validateOption() {
         int optlistlength = mainMenuOptions.length;
-        int option_idx;
+        int option_idx = 0;
 
-        try {
-            option_idx = Integer.parseInt(option);
+        while (true) {
+            displayMenu();
+            String option = scanner.nextLine();
 
-            if (option_idx<=0 || option_idx>optlistlength){
-                System.out.println("Option doesn't exist");
-            } else if (option_idx == 4) {
-                System.exit(1);
-            } else {
-                switch (option_idx){
-                    case 1 -> new saveContact();
-                    case 2 -> {}
-                    case 3 -> {}
+            try {
+                option_idx = Integer.parseInt(option);
+
+                if (option_idx <= 0 || option_idx > optlistlength) {
+                    System.out.println("Option doesn't exist");
+                } else {
+                    switch (option_idx) {
+                        case 1 -> new saveContact();
+                        case 2 -> new deleteContact();
+                        case 3 -> System.out.println("Option 3 selected - Search Contact");
+                        case 4 -> System.out.println("Option 4 selected - View Contact");
+                        case 5 -> {
+                            System.out.println("Exiting...");
+                            scanner.close();
+                            System.exit(1);}
+                    }
                 }
+
+            } catch (NumberFormatException e) {
+                System.out.println("~Enter a valid number~");
             }
-
-        }catch (NumberFormatException e){
-            System.out.println("~Enter the item index~");
         }
-
-        return null;
     }
 
 

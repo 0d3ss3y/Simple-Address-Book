@@ -4,7 +4,8 @@ public interface TUI {
      final String[] mainMenuOptions = {
             "Save Contact",
             "Delete Contact",
-            "Search",
+            "Search Contact",
+             "View Contact",
              "Exit"
     };
 
