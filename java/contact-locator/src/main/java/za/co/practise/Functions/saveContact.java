@@ -24,10 +24,10 @@ public class saveContact {
 
     private String getContactNumber() {
         System.out.print("Enter your country code: +");
-        String country_code = "+["+scanner.nextLine()+"]";
+        String country_code = "+("+scanner.nextLine()+")";
         System.out.print("Enter your phone number: ");
         String unique_number= scanner.nextLine();
-        return country_code+" "+unique_number;
+        return "%s%s".formatted(country_code, unique_number);
     }
 
     private String getContactName() {

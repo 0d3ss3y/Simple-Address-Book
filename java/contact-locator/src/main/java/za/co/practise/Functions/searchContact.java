@@ -18,13 +18,14 @@ public class searchContact {
         try {
             int idx = Integer.parseInt(opt);
 
-            if (idx == 0 || idx < searchMenuOptions.length || idx > searchMenuOptions.length){
+            if (idx <= 0 || idx > searchMenuOptions.length){
                 throw new NumberFormatException();
             } else {
                 switch (idx){
-                    case 1 -> searchByName();
-                    case 2 -> searchByNumber();
+                    case 1 -> {searchByName();}
+                    case 2 -> {searchByNumber();}
                 }
+
             }
         }catch (NumberFormatException e){
             System.out.println("Please enter a valid option!");
@@ -40,7 +41,7 @@ public class searchContact {
         } else if (contact.contactDetails.containsValue(number)) {
             for (Map.Entry<String,String> entry : contact.contactDetails.entrySet()){
                 if (entry.getValue().equals(number)){
-                    System.out.println("Contact number " + entry.getKey() + " belongs to " + entry.getKey());
+                    System.out.println("Contact number " + entry.getValue() + " belongs to " + entry.getKey());
                     break;
                 }
             }
